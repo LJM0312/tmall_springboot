@@ -1,0 +1,14 @@
+package com.ljm.tmall.dao;
+ 
+import java.util.List;
+
+import com.ljm.tmall.pojo.Product;
+import com.ljm.tmall.pojo.Review;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ReviewDAO extends JpaRepository<Review,Integer>{
+
+	List<Review> findByProductOrderByIdDesc(Product product);
+	int countByProduct(Product product);
+
+}
